@@ -1,7 +1,6 @@
 export interface CombatUnit {
   id: string;
   name: string;
-  baseSpeed: number;
   speed: number;
   gauge: number;
   turnsTaken: number;
@@ -15,3 +14,5 @@ export interface BattleState {
   time: number;
   threshold: number;
 }
+
+export type PassiveEffect = (unit: CombatUnit) => void;

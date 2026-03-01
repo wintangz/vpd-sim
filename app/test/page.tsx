@@ -1,5 +1,5 @@
-import { BattleState } from '@/engine/model';
-import { advanceOneTurn } from '@/engine/simulator';
+import { BattleState } from '@/engine/battle/model';
+import { advanceOneTurn } from '@/engine/battle/battle';
 
 const Test = () => {
   const battle: BattleState = {
@@ -7,7 +7,6 @@ const Test = () => {
       {
         id: 'tyrant',
         name: 'Tyrant',
-        baseSpeed: 61231,
         speed: 61231,
         gauge: 0,
         turnsTaken: 0,
@@ -17,7 +16,6 @@ const Test = () => {
       {
         id: 'merry',
         name: 'Merry',
-        baseSpeed: 47959,
         speed: 47959,
         gauge: 0,
         turnsTaken: 0,
@@ -27,7 +25,6 @@ const Test = () => {
       {
         id: 'wonder',
         name: 'Wonder',
-        baseSpeed: 49714,
         speed: 49714,
         gauge: 0,
         turnsTaken: 0,
@@ -37,7 +34,6 @@ const Test = () => {
       {
         id: 'cringe',
         name: 'Cringe',
-        baseSpeed: 12224,
         speed: 12224,
         gauge: 0,
         turnsTaken: 0,

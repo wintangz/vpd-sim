@@ -1,13 +1,5 @@
 import { BattleState, CombatUnit } from './model';
-
-function applyItemPassive(unit: CombatUnit) {
-  if (unit.neck === 'anxietyScarf') {
-    unit.speed += unit.baseSpeed * 0.03;
-  }
-  if (unit.neck === 'rubberRingDonut' && unit.turnsTaken === 15) {
-    unit.speed += unit.baseSpeed;
-  }
-}
+import { applyItemPassive } from './passive';
 
 export function advanceOneTurn(battle: BattleState): CombatUnit {
   let actingUnit: CombatUnit | null = null;
