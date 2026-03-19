@@ -6,6 +6,7 @@ export interface CombatUnit {
   turnsTaken: number;
   head: string;
   neck: string;
+  modifiers: StatModifier[];
 }
 
 export interface BattleState {
@@ -16,3 +17,18 @@ export interface BattleState {
 }
 
 export type PassiveEffect = (unit: CombatUnit) => void;
+
+export type Stat = 'speed';
+
+export type StatModifier = {
+  stat: Stat;
+  type: 'multiplier' | 'flat';
+  value: number;
+  duration: number;
+  source: string;
+};
+
+export type Effect = {
+  name: string;
+  duration: number;
+};

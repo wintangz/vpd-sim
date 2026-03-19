@@ -1,35 +1,38 @@
 import { BattleState } from '@/engine/battle/model';
-import { advanceOneTurn } from '@/engine/battle/battle';
+import { advanceOneTurn, getEffectiveStat } from '@/engine/battle/battle';
 
 const Test = () => {
   const battle: BattleState = {
     units: [
       {
-        id: 'tyrant',
-        name: 'Tyrant',
-        speed: 61231,
+        id: 'gronk',
+        name: 'Gronk',
+        speed: 45085,
         gauge: 0,
         turnsTaken: 0,
         head: '',
         neck: '',
+        modifiers: [],
       },
       {
         id: 'merry',
         name: 'Merry',
-        speed: 47959,
+        speed: 51223,
         gauge: 0,
         turnsTaken: 0,
         head: '',
         neck: 'anxietyScarf',
+        modifiers: [],
       },
       {
-        id: 'wonder',
-        name: 'Wonder',
-        speed: 49714,
+        id: 'mischief',
+        name: 'Mischief',
+        speed: 60201,
         gauge: 0,
         turnsTaken: 0,
         head: '',
-        neck: 'rubberRingDonut',
+        neck: '',
+        modifiers: [],
       },
       {
         id: 'cringe',
@@ -39,6 +42,17 @@ const Test = () => {
         turnsTaken: 0,
         head: '',
         neck: '',
+        modifiers: [],
+      },
+      {
+        id: 'jealous',
+        name: 'Jealous',
+        speed: 39104,
+        gauge: 0,
+        turnsTaken: 0,
+        head: '',
+        neck: '',
+        modifiers: [],
       },
     ],
     totalTurns: 0,
@@ -47,11 +61,7 @@ const Test = () => {
   };
 
   for (let i = 0; i < 100; i++) {
-    const acted = advanceOneTurn(battle);
-
-    console.log(
-      `Turn ${battle.totalTurns}: ${acted.name} (unit turns: ${acted.turnsTaken}, speed: ${acted.speed.toFixed(2)})`,
-    );
+    advanceOneTurn(battle);
   }
   return <div>Test</div>;
 };
