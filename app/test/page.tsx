@@ -1,5 +1,5 @@
 import { BattleState } from '@/engine/battle/model';
-import { advanceOneTurn, getEffectiveStat } from '@/engine/battle/battle';
+import { advanceOneTurn } from '@/engine/battle/battle';
 
 const Test = () => {
   const battle: BattleState = {
@@ -17,11 +17,11 @@ const Test = () => {
       {
         id: 'merry',
         name: 'Merry',
-        speed: 51223,
+        speed: 44131,
         gauge: 0,
         turnsTaken: 0,
         head: '',
-        neck: 'anxietyScarf',
+        neck: '',
         modifiers: [],
       },
       {
@@ -47,7 +47,7 @@ const Test = () => {
       {
         id: 'jealous',
         name: 'Jealous',
-        speed: 39104,
+        speed: 39620,
         gauge: 0,
         turnsTaken: 0,
         head: '',
@@ -60,7 +60,7 @@ const Test = () => {
     threshold: 1000,
   };
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 50; i++) {
     advanceOneTurn(battle);
   }
   return <div>Test</div>;
